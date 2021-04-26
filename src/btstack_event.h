@@ -4646,13 +4646,22 @@ static inline hci_con_handle_t hfp_subevent_enhanced_voice_recognition_status_ge
     return little_endian_read_16(event, 3);
 }
 /**
+ * @brief Get field status from event HFP_SUBEVENT_ENHANCED_VOICE_RECOGNITION_STATUS
+ * @param event packet
+ * @return status
+ * @note: btstack_type 1
+ */
+static inline uint8_t hfp_subevent_enhanced_voice_recognition_status_get_status(const uint8_t * event){
+    return event[5];
+}
+/**
  * @brief Get field state from event HFP_SUBEVENT_ENHANCED_VOICE_RECOGNITION_STATUS
  * @param event packet
  * @return state
  * @note: btstack_type 1
  */
 static inline uint8_t hfp_subevent_enhanced_voice_recognition_status_get_state(const uint8_t * event){
-    return event[5];
+    return event[6];
 }
 
 /**
@@ -4674,13 +4683,22 @@ static inline uint16_t hfp_subevent_enhanced_voice_recognition_text_get_text_id(
     return little_endian_read_16(event, 5);
 }
 /**
+ * @brief Get field text_operation from event HFP_SUBEVENT_ENHANCED_VOICE_RECOGNITION_TEXT
+ * @param event packet
+ * @return text_operation
+ * @note: btstack_type 1
+ */
+static inline uint8_t hfp_subevent_enhanced_voice_recognition_text_get_text_operation(const uint8_t * event){
+    return event[7];
+}
+/**
  * @brief Get field text_type from event HFP_SUBEVENT_ENHANCED_VOICE_RECOGNITION_TEXT
  * @param event packet
  * @return text_type
  * @note: btstack_type 1
  */
 static inline uint8_t hfp_subevent_enhanced_voice_recognition_text_get_text_type(const uint8_t * event){
-    return event[7];
+    return event[8];
 }
 /**
  * @brief Get field text_length from event HFP_SUBEVENT_ENHANCED_VOICE_RECOGNITION_TEXT
@@ -4689,7 +4707,7 @@ static inline uint8_t hfp_subevent_enhanced_voice_recognition_text_get_text_type
  * @note: btstack_type L
  */
 static inline uint16_t hfp_subevent_enhanced_voice_recognition_text_get_text_length(const uint8_t * event){
-    return little_endian_read_16(event, 8);
+    return little_endian_read_16(event, 9);
 }
 /**
  * @brief Get field text from event HFP_SUBEVENT_ENHANCED_VOICE_RECOGNITION_TEXT
@@ -4698,7 +4716,7 @@ static inline uint16_t hfp_subevent_enhanced_voice_recognition_text_get_text_len
  * @note: btstack_type V
  */
 static inline const uint8_t * hfp_subevent_enhanced_voice_recognition_text_get_text(const uint8_t * event){
-    return &event[10];
+    return &event[11];
 }
 
 #ifdef ENABLE_BLE
