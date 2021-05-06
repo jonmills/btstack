@@ -37,7 +37,7 @@ With mingw64-w64 installed, just go to the port/windows-winusb directory and run
     $ make
 
 Note: When compiling with msys2-32 bit and/or the 32-bit toolchain, compilation fails
-as `conio.h` seems to be mission. Please use msys2-64 bit with the 64-bit toolchain for now.
+as `conio.h` seems to be missing. Please use msys2-64 bit with the 64-bit toolchain for now.
 
 ## Console Output
 
